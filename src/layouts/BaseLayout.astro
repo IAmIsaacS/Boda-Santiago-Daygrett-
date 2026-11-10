@@ -1,5 +1,40 @@
 ---
 import '../styles/global.css';
+
+const siteURL = Astro.site ?? new URL('https://boda-santiago-daygrett.netlify.app');
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const ogImageURL = new URL('/og-image.jpg', siteURL);
+
+const pageTitle = 'Santiago & Daygrett — Boda 12 de Diciembre de 2026 · Turmero';
+const pageDescription =
+  'Santiago y Daygrett te invitan a su boda el sábado 12 de diciembre de 2026 en Turmero, Aragua. Detalles, código de vestimenta y confirmación de asistencia.';
+const eventDate = '2026-12-12T13:30:00-04:00';
+
+const eventSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: 'Boda de Santiago y Daygrett',
+  description: pageDescription,
+  startDate: eventDate,
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  location: {
+    '@type': 'Place',
+    name: 'Club Tu Evento Ideal',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Av. Principal Rosario de Paya, urbanización Privada',
+      addressLocality: 'Turmero',
+      addressRegion: 'Aragua',
+      addressCountry: 'VE',
+    },
+  },
+  image: [ogImageURL.href],
+  organizer: [
+    { '@type': 'Person', name: 'Santiago' },
+    { '@type': 'Person', name: 'Daygrett' },
+  ],
+};
 ---
 
 <!DOCTYPE html>
@@ -7,8 +42,39 @@ import '../styles/global.css';
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <meta content="Santiago y Daygrett te invitan a celebrar su boda el 12 de diciembre de 2026 en Turmero." name="description" />
-  <title>Santiago &amp; Daygrett — Invitación de Boda</title>
+  <meta content={pageDescription} name="description" />
+  <meta content="Santiago & Daygrett" name="author" />
+  <meta content="index, follow" name="robots" />
+  <meta content="#EFC2D0" name="theme-color" />
+  <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href={canonicalURL.href} rel="canonical" />
+  <title>{pageTitle}</title>
+
+  <!-- Open Graph -->
+  <meta content="website" property="og:type" />
+  <meta content="es_VE" property="og:locale" />
+  <meta content="Santiago & Daygrett" property="og:site_name" />
+  <meta content={pageTitle} property="og:title" />
+  <meta content={pageDescription} property="og:description" />
+  <meta content={canonicalURL.href} property="og:url" />
+  <meta content={ogImageURL.href} property="og:image" />
+  <meta content="image/jpeg" property="og:image:type" />
+  <meta content="1200" property="og:image:width" />
+  <meta content="630" property="og:image:height" />
+  <meta content="Santiago y Daygrett" property="og:image:alt" />
+
+  <!-- Twitter / X -->
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content={pageTitle} name="twitter:title" />
+  <meta content={pageDescription} name="twitter:description" />
+  <meta content={ogImageURL.href} name="twitter:image" />
+  <meta content="Santiago y Daygrett" name="twitter:image:alt" />
+
+  <!-- Datos estructurados del evento -->
+  <script type="application/ld+json" set:html={JSON.stringify(eventSchema)}></script>
+
   <!-- Google Fonts: Playfair Display (títulos), Montserrat (párrafos y textos generales), Corinthia (nombres del hero) -->
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
