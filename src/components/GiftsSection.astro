@@ -1,0 +1,185 @@
+<!-- REGALOS / LLUVIA DE SOBRES -->
+<section class="py-16 sm:py-20 px-6 sm:px-12 max-w-5xl mx-auto" id="regalos">
+  <div class="bg-white rounded-2xl border border-brand-line shadow-[0_20px_50px_-10px_rgba(0,0,0,0.04)] p-10 sm:p-16 lg:p-20 text-center relative overflow-hidden">
+    <span class="text-xs uppercase tracking-[0.3em] text-brand-accent font-medium block mb-4">
+      Mesa de Regalos
+    </span>
+
+    <h3 class="font-editorial text-4xl sm:text-5xl lg:text-6xl text-brand-dark font-light tracking-tight mb-6">
+      Mesa de Regalos
+    </h3>
+
+    <p class="text-sm sm:text-base text-brand-secondary font-light max-w-lg mx-auto leading-relaxed mb-10">
+      Tu presencia y cariño son nuestro mejor regalo. Si deseas hacernos un presente para ayudarnos a comenzar esta nueva etapa, ponemos a tu disposición nuestras cuentas.
+    </p>
+
+    <!-- Botón para abrir el modal -->
+    <div>
+      <button
+        id="open-gifts-modal-btn"
+        type="button"
+        class="inline-flex items-center space-x-3 px-8 py-3.5 rounded-full bg-brand-accent text-brand-dark text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#e7b2c2] hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
+        aria-haspopup="dialog"
+        aria-expanded="false"
+        aria-controls="gifts-modal"
+      >
+        <svg class="w-4 h-4 stroke-current fill-none" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="8" width="18" height="13" rx="2"></rect>
+          <path d="M12 8v13"></path>
+          <path d="M19 12H5"></path>
+          <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"></path>
+        </svg>
+        <span>Ver datos de regalo</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mini Ventana / Modal -->
+  <div
+    id="gifts-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-gifts-title"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-dark/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
+  >
+    <div
+      id="gifts-modal-card"
+      class="bg-white border border-brand-line w-full max-w-lg rounded-2xl p-6 sm:p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.18)] transform scale-95 transition-transform duration-300 relative max-h-[90vh] overflow-y-auto"
+    >
+      <!-- Botón de Cerrar (X) -->
+      <button
+        id="close-gifts-modal-btn"
+        type="button"
+        aria-label="Cerrar ventana"
+        class="absolute top-5 right-5 w-8 h-8 rounded-full border border-brand-line flex items-center justify-center text-brand-secondary hover:text-brand-dark hover:border-brand-accent transition-colors cursor-pointer"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Cabecera del Modal -->
+      <div class="text-center mb-6 pr-6">
+        <span class="text-[11px] uppercase tracking-[0.25em] text-brand-accent font-medium block mb-1">
+          Aportes &amp; Detalles
+        </span>
+        <h4 id="modal-gifts-title" class="font-editorial text-2xl sm:text-3xl text-brand-dark">
+          Cuentas Disponibles
+        </h4>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Bloque Pago Móvil -->
+        <div class="border border-brand-line rounded-xl p-4 bg-[#faf9f8]">
+          <div class="flex items-center space-x-2 mb-3">
+            <span class="w-2 h-2 rounded-full bg-brand-accent inline-block"></span>
+            <span class="text-xs uppercase tracking-widest font-semibold text-brand-dark">Pago Móvil</span>
+          </div>
+
+          <div class="space-y-2 text-xs sm:text-sm text-brand-dark font-sans">
+            <div class="flex justify-between items-center py-1 border-b border-brand-line/60">
+              <span class="text-brand-secondary">Banco:</span>
+              <span class="font-medium">Banesco (0134)</span>
+            </div>
+            <div class="flex justify-between items-center py-1 border-b border-brand-line/60">
+              <span class="text-brand-secondary">Cédula:</span>
+              <span class="font-medium font-mono">V-27.820.334</span>
+            </div>
+            <div class="flex justify-between items-center py-1">
+              <span class="text-brand-secondary">Teléfono:</span>
+              <span class="font-medium font-mono">0424-3019742</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque Binance -->
+        <div class="border border-brand-line rounded-xl p-4 bg-[#faf9f8]">
+          <div class="flex items-center space-x-2 mb-3">
+            <span class="w-2 h-2 rounded-full bg-brand-accent inline-block"></span>
+            <span class="text-xs uppercase tracking-widest font-semibold text-brand-dark">Binance Pay</span>
+          </div>
+
+          <div class="space-y-2 text-xs sm:text-sm text-brand-dark font-sans">
+            <div class="flex justify-between items-center py-1 border-b border-brand-line/60">
+              <span class="text-brand-secondary">Pay ID:</span>
+              <span class="font-medium font-mono">361569791</span>
+            </div>
+            <div class="flex justify-between items-center py-1">
+              <span class="text-brand-secondary">Email:</span>
+              <span class="font-medium text-xs break-all">Santiagovelasco078@gmail.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pie del Modal con botón de cerrar secundario -->
+      <div class="mt-6 pt-4 text-center border-t border-brand-line/60">
+        <button
+          id="close-gifts-modal-footer-btn"
+          type="button"
+          class="px-6 py-2.5 rounded-full border border-brand-line text-xs uppercase tracking-[0.15em] text-brand-secondary hover:text-brand-dark hover:border-brand-accent transition-colors"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupGiftsModal() {
+    const openBtn = document.getElementById('open-gifts-modal-btn');
+    const closeBtn = document.getElementById('close-gifts-modal-btn');
+    const closeFooterBtn = document.getElementById('close-gifts-modal-footer-btn');
+    const modal = document.getElementById('gifts-modal');
+    const modalCard = document.getElementById('gifts-modal-card');
+
+    if (!openBtn || !closeBtn || !modal || !modalCard) return;
+
+    function openModal() {
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modalCard.classList.remove('scale-95');
+      modalCard.classList.add('scale-100');
+      openBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modalCard.classList.remove('scale-100');
+      modalCard.classList.add('scale-95');
+      openBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    if (closeFooterBtn) {
+      closeFooterBtn.addEventListener('click', closeModal);
+    }
+
+    // Cerrar al hacer click fuera del contenido (backdrop)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Cerrar con tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('pointer-events-none')) {
+        closeModal();
+      }
+    });
+  }
+
+  // Ejecutar al cargar la página
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupGiftsModal);
+  } else {
+    setupGiftsModal();
+  }
+
+  // Soporte para transiciones de Astro (View Transitions si se usan)
+  document.addEventListener('astro:page-load', setupGiftsModal);
+</script>
