@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth custom styling */
+body {
+  background-color: #FFFFFF;
+  color: #242424;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-feature-settings: "liga" 1, "dlig" 1;
+}
+
+/* Countdown numbers precision */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}

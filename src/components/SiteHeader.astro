@@ -1,0 +1,34 @@
+<!-- 03. ENCABEZADO Y NAVEGACIÓN DISCRETA (ORA STUDIO INSPIRATION) -->
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 sm:px-10 lg:px-16 py-5 flex items-center justify-between mix-blend-difference text-white" id="site-header">
+  <!-- Iniciales novios -->
+  <a class="text-xs uppercase tracking-[0.25em] font-medium font-sans hover:opacity-75 transition-opacity" href="#hero">
+    S <span class="text-brand-accent">&amp;</span> D
+  </a>
+  <!-- Navegación central minimalista -->
+  <nav class="hidden md:flex items-center space-x-10 text-[11px] uppercase tracking-[0.25em] font-medium font-sans">
+    <a class="hover:text-brand-accent transition-colors" href="#hero">Inicio</a>
+    <a class="hover:text-brand-accent transition-colors" href="#ubicacion">Ubicación</a>
+    <a class="hover:text-brand-accent transition-colors" href="#vestimenta">Vestimenta</a>
+    <a class="hover:text-brand-accent transition-colors" href="#galeria">Momentos</a>
+  </nav>
+  <!-- Acción discreta de WhatsApp -->
+  <div>
+    <a class="text-[11px] uppercase tracking-[0.2em] font-medium border-b border-brand-accent pb-0.5 hover:text-brand-accent transition-all" href="https://wa.me/521234567890?text=Hola%20Santiago%20y%20Daygrett,%20confirmo%20con%20alegr%C3%ADa%20mi%20asistencia%20a%20su%20boda." rel="noopener noreferrer" target="_blank">
+      Confirmar RSVP
+    </a>
+  </div>
+</header>
+
+<script is:inline>
+  // Header scroll background effect
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      header.classList.remove('mix-blend-difference', 'text-white');
+      header.classList.add('bg-white/95', 'backdrop-blur-md', 'text-brand-dark', 'shadow-sm', 'py-4');
+    } else {
+      header.classList.add('mix-blend-difference', 'text-white');
+      header.classList.remove('bg-white/95', 'backdrop-blur-md', 'text-brand-dark', 'shadow-sm', 'py-4');
+    }
+  });
+</script>

@@ -1,0 +1,189 @@
+---
+import { galleryItems } from '../data/gallery';
+
+const initialSlotFor = (index) => {
+  if (index === 0) return 'center';
+  if (index === 1) return 'right';
+  if (index === galleryItems.length - 1) return 'left';
+  return 'hidden';
+};
+---
+
+<!-- 07. CUARTA SECCIÓN — CARRUSEL FOTOGRÁFICO HORIZONTAL (COMPOSICIÓN EXACTA ORA STUDIO) -->
+<section class="py-16 overflow-hidden bg-white" id="galeria">
+  <div class="max-w-[1400px] mx-auto px-4">
+    <div class="flex items-center justify-between mb-8 px-4">
+      <span class="text-xs uppercase tracking-[0.25em] text-brand-secondary">Colección fotográfica</span>
+      <span aria-live="polite" class="text-[11px] text-brand-secondary tracking-widest font-sans" id="carousel-indicator">01 / {String(galleryItems.length).padStart(2, '0')}</span>
+    </div>
+
+    <!-- Escenario: cards independientes. La central es grande y las laterales son verticales. -->
+    <div class="relative w-full h-[440px] sm:h-[620px] lg:h-[640px] xl:h-[760px]" id="carousel-stage">
+      {galleryItems.map((item, index) => (
+        <article
+          class="carousel-card"
+          data-card-index={index}
+          data-initial-slot={initialSlotFor(index)}
+        >
+          <img
+            alt={item.caption}
+            class="carousel-card__image"
+            decoding="async"
+            draggable="false"
+            loading={index === 0 ? 'eager' : 'lazy'}
+            src={item.main}
+          />
+        </article>
+      ))}
+    </div>
+
+    <!-- Controles de navegación muy pequeños debajo de la imagen principal -->
+    <div class="flex items-center justify-center space-x-6 mt-8">
+      <button aria-label="Foto anterior" class="w-10 h-10 rounded-full border border-brand-line flex items-center justify-center text-brand-dark hover:border-brand-accent hover:text-brand-accent transition-colors" id="btn-prev">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+        </svg>
+      </button>
+      <div class="flex space-x-2" id="carousel-dots">
+        {galleryItems.map((_, dotIndex) => (
+          <span class={dotIndex === 0 ? 'w-6 h-1 bg-brand-accent rounded-full transition-all' : 'w-2 h-1 bg-brand-line rounded-full transition-all'}></span>
+        ))}
+      </div>
+      <button aria-label="Foto siguiente" class="w-10 h-10 rounded-full border border-brand-line flex items-center justify-center text-brand-dark hover:border-brand-accent hover:text-brand-accent transition-colors" id="btn-next">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .carousel-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: #f5f2ef;
+    box-shadow: 0 22px 45px -15px rgba(36, 36, 36, 0.35);
+    will-change: transform, width, height, filter;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .carousel-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    will-change: filter;
+  }
+
+  /* Marcos 3:4: el mismo formato vertical de las fotografías (3024 × 4032). */
+  .carousel-card[data-initial-slot='center'] {
+    width: 300px;
+    max-width: 88%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 16px;
+    z-index: 30;
+  }
+
+  .carousel-card[data-initial-slot='left'],
+  .carousel-card[data-initial-slot='right'],
+  .carousel-card[data-initial-slot='hidden'] {
+    width: 190px;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    top: 50%;
+    border-radius: 12px;
+  }
+
+  .carousel-card[data-initial-slot='left'] {
+    left: -24px;
+    transform: translateY(-50%) rotate(-2deg);
+    z-index: 20;
+  }
+
+  .carousel-card[data-initial-slot='right'] {
+    left: auto;
+    right: -24px;
+    transform: translateY(-50%) rotate(2deg);
+    z-index: 20;
+  }
+
+  .carousel-card[data-initial-slot='hidden'] {
+    left: calc(100% + 80px);
+    transform: translateY(-50%) rotate(2deg);
+    z-index: 10;
+  }
+
+  .carousel-card[data-initial-slot='left'] .carousel-card__image,
+  .carousel-card[data-initial-slot='right'] .carousel-card__image,
+  .carousel-card[data-initial-slot='hidden'] .carousel-card__image {
+    filter: brightness(1.32) saturate(0.8);
+  }
+
+  @media (min-width: 640px) {
+    .carousel-card[data-initial-slot='center'] {
+      width: 435px;
+    }
+
+    .carousel-card[data-initial-slot='left'],
+    .carousel-card[data-initial-slot='right'],
+    .carousel-card[data-initial-slot='hidden'] {
+      width: 283px;
+    }
+
+    .carousel-card[data-initial-slot='left'] {
+      left: -32px;
+    }
+
+    .carousel-card[data-initial-slot='right'] {
+      right: -32px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .carousel-card[data-initial-slot='center'] {
+      width: 450px;
+    }
+
+    .carousel-card[data-initial-slot='left'],
+    .carousel-card[data-initial-slot='right'],
+    .carousel-card[data-initial-slot='hidden'] {
+      width: 293px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .carousel-card[data-initial-slot='center'] {
+      width: 540px;
+    }
+
+    .carousel-card[data-initial-slot='left'],
+    .carousel-card[data-initial-slot='right'],
+    .carousel-card[data-initial-slot='hidden'] {
+      width: 351px;
+    }
+  }
+
+  /* En pantallas táctiles, permitir el scroll vertical y capturar el gesto horizontal. */
+  @media (hover: none) and (pointer: coarse) {
+    #carousel-stage,
+    .carousel-card {
+      touch-action: pan-y;
+    }
+  }
+</style>
+
+<script>
+  import '../scripts/gallery-carousel';
+</script>

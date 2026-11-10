@@ -1,0 +1,48 @@
+---
+import Countdown from './Countdown.astro';
+import image1 from '../assets/1.jpeg';
+import image2 from '../assets/2.jpeg';
+---
+
+<!-- 05. SEGUNDA SECCIÓN — PANEL EDITORIAL SUPERPUESTO (ESTILO ORA STUDIO) -->
+<section class="relative z-20 -mt-20 md:-mt-28 px-4 sm:px-6 lg:px-12 max-w-[1360px] mx-auto pb-24" id="panel-editorial">
+  <!-- El gran panel blanco superpuesto (86% ancho en desktop, bordes redondeados sutiles) -->
+  <div class="bg-white rounded-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08)] border border-stone-100 p-8 sm:p-12 lg:p-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <!-- Columna Izquierda (~32% - 4 columnas) -->
+      <div class="lg:col-span-4 flex flex-col space-y-6">
+        <div class="relative overflow-hidden rounded-xl bg-stone-100 aspect-[3/4] shadow-sm group">
+          <img alt="Los novios" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" src={image1.src} />
+        </div>
+        <div class="pt-2 text-left">
+          <span class="text-[10px] uppercase tracking-[0.25em] text-brand-secondary block mb-1">Capítulo I</span>
+          <p class="font-editorial text-2xl text-brand-dark leading-snug">
+            Dos caminos que se unen para siempre.
+          </p>
+          <p class="text-xs text-brand-secondary mt-2 font-light leading-relaxed">
+            Un instante que guardamos en el corazón y que hoy queremos compartir con ustedes.
+          </p>
+        </div>
+      </div>
+      <!-- Columna Derecha (~68% - 8 columnas) -->
+      <div class="lg:col-span-8 flex flex-col justify-between h-full space-y-10 lg:pl-6">
+        <!-- Mensaje editorial con tipografía serif -->
+        <div>
+          <span class="text-xs uppercase tracking-[0.3em] text-brand-accent block mb-3 font-medium">Invitación de honor</span>
+          <p class="font-editorial text-2xl sm:text-3xl lg:text-4xl text-brand-dark font-light leading-[1.3] tracking-tight">
+            «Con una profunda alegría, los invitamos a celebrar nuestro matrimonio. Queremos compartir con ustedes el día en que unimos nuestras vidas, rodeados de las personas que han sido parte esencial de nuestra historia.»
+          </p>
+          <p class="text-xs uppercase tracking-[0.2em] text-brand-secondary mt-4 font-normal">
+            — Santiago &amp; Daygrett
+          </p>
+        </div>
+        <!-- Fotografía horizontal amplia (16:9) -->
+        <div class="relative overflow-hidden rounded-xl bg-stone-100 aspect-[16/9] shadow-sm group">
+          <img alt="Santiago y Daygrett" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" src={image2.src} style="object-position: 50% 20%;" />
+        </div>
+        <!-- CUENTA REGRESIVA INTEGRADA (Días, Horas, Minutos, Segundos con líneas finas) -->
+        <Countdown />
+      </div>
+    </div>
+  </div>
+</section>

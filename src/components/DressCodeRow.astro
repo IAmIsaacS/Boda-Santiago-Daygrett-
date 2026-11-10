@@ -1,0 +1,152 @@
+---
+import vestimentaA from '../assets/vestimenta/a.jpg';
+import vestimentaB from '../assets/vestimenta/b.jpg';
+import vestimentaC from '../assets/vestimenta/c.jpg';
+import vestimentaD from '../assets/vestimenta/d.jpg';
+
+const vestimentaImages = [
+  { src: vestimentaA.src, alt: 'Código de vestimenta: caballero con traje azul claro' },
+  { src: vestimentaB.src, alt: 'Código de vestimenta: dama con vestido rosa' },
+  { src: vestimentaC.src, alt: 'Código de vestimenta: dama con vestido verde' },
+  { src: vestimentaD.src, alt: 'Código de vestimenta: caballero con traje crema' },
+];
+---
+
+<!-- FILA 2 — CÓDIGO DE VESTIMENTA (32% Foto | 25% Título | 43% Texto) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-10 border-t border-brand-line" id="vestimenta">
+  <!-- Columna Izquierda — 32% (4 cols en grid-12) -->
+  <div class="lg:col-span-4">
+    <div class="relative aspect-square rounded-xl overflow-hidden bg-stone-100 shadow-sm" id="dresscode-carousel">
+      {vestimentaImages.map((image, index) => (
+        <img
+          alt={image.alt}
+          aria-hidden={index === 0 ? 'false' : 'true'}
+          class:list={['dresscode-slide', index === 0 && 'is-active']}
+          decoding="async"
+          loading={index === 0 ? 'eager' : 'lazy'}
+          src={image.src}
+        />
+      ))}
+    </div>
+  </div>
+  <!-- Columna Central — 25% (3 cols en grid-12) -->
+  <div class="lg:col-span-3 lg:pt-2">
+    <span class="text-[10px] uppercase tracking-[0.25em] text-brand-secondary block mb-2">Protocolo</span>
+    <h3 class="font-editorial text-3xl sm:text-4xl text-brand-dark leading-tight">
+      Código de<br class="hidden sm:inline" /> vestimenta
+    </h3>
+    <span class="inline-block mt-3 px-3 py-1 bg-brand-accent/20 text-brand-dark text-xs font-medium rounded-full uppercase tracking-wider">
+      Semi formal
+    </span>
+  </div>
+  <!-- Columna Derecha — 43% (5 cols en grid-12) -->
+  <div class="lg:col-span-5 lg:pt-2 flex flex-col justify-between space-y-4">
+    <p class="text-sm sm:text-base text-brand-secondary font-light leading-relaxed">
+      Vestimenta elegante y fresca en colores pastel suaves (como azul claro, amarillo claro, verde menta, rosa pálido o beige).
+    </p>
+    <div class="space-y-3 pt-2">
+      <div class="border-l-2 border-brand-accent pl-4">
+        <span class="text-xs uppercase tracking-wider text-brand-dark font-medium block">Hombres</span>
+        <p class="text-xs text-brand-secondary font-light mt-0.5">Traje ligero en tonos pastel o beige, combinado con camisa blanca o franela blanca básica. Pueden usar mocasines o deportivos blancos limpios.</p>
+      </div>
+      <div class="border-l-2 border-brand-accent pl-4">
+        <span class="text-xs uppercase tracking-wider text-brand-dark font-medium block">Mujeres</span>
+        <p class="text-xs text-brand-secondary font-light mt-0.5">Vestidos largos o medianos de tela ligera, enterizos elegantes o conjuntos de dos piezas en tonos pastel.</p>
+      </div>
+    </div>
+    <p class="text-xs text-brand-secondary/80 italic pt-2">
+      * Se reserva el color blanco y marfil exclusivamente para la novia.
+    </p>
+  </div>
+</div>
+
+<style>
+  .dresscode-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1000ms ease-in-out;
+  }
+
+  .dresscode-slide.is-active {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dresscode-slide {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const frame = document.getElementById('dresscode-carousel');
+
+  if (frame) {
+    const slides = Array.from(frame.querySelectorAll('.dresscode-slide'));
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const INTERVAL = 4500;
+
+    let currentIndex = 0;
+    let timer = null;
+    let isVisible = false;
+
+    function showSlide(nextIndex) {
+      slides[currentIndex].classList.remove('is-active');
+      slides[currentIndex].setAttribute('aria-hidden', 'true');
+
+      currentIndex = nextIndex % slides.length;
+
+      slides[currentIndex].classList.add('is-active');
+      slides[currentIndex].setAttribute('aria-hidden', 'false');
+    }
+
+    function stop() {
+      if (timer !== null) {
+        window.clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    function start() {
+      stop();
+
+      if (reducedMotion.matches || document.hidden || !isVisible || slides.length < 2) return;
+
+      timer = window.setInterval(() => showSlide(currentIndex + 1), INTERVAL);
+    }
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          isVisible = entries[0].isIntersecting;
+
+          if (isVisible) {
+            start();
+          } else {
+            stop();
+          }
+        },
+        { threshold: 0.25 }
+      );
+
+      observer.observe(frame);
+    } else {
+      isVisible = true;
+      start();
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stop();
+      } else {
+        start();
+      }
+    });
+
+    reducedMotion.addEventListener('change', start);
+  }
+</script>

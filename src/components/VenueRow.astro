@@ -1,0 +1,37 @@
+---
+import VenueMap from './VenueMap.astro';
+---
+
+<!-- FILA 1 — UBICACIÓN (32% Foto | 25% Título | 43% Texto) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-10 border-t border-brand-line" id="ubicacion">
+  <!-- Columna Izquierda — 32% (4 cols en grid-12) -->
+  <div class="lg:col-span-4">
+    <div class="aspect-[16/9] lg:aspect-[4/3] rounded-xl overflow-hidden bg-stone-100 shadow-sm">
+      <VenueMap />
+    </div>
+  </div>
+  <!-- Columna Central — 25% (3 cols en grid-12) -->
+  <div class="lg:col-span-3 lg:pt-2">
+    <span class="text-[10px] uppercase tracking-[0.25em] text-brand-secondary block mb-2">Recepción &amp; Fiesta</span>
+    <h3 class="font-editorial text-3xl sm:text-4xl text-brand-dark leading-tight">
+      El lugar de nuestra<br class="hidden sm:inline" /> celebración
+    </h3>
+    <span class="text-xs text-brand-secondary uppercase tracking-[0.2em] block mt-3 font-medium">
+      Ceremonia 1:30 PM
+    </span>
+  </div>
+  <!-- Columna Derecha — 43% (5 cols en grid-12) -->
+  <div class="lg:col-span-5 lg:pt-2 flex flex-col justify-between space-y-4">
+    <div>
+      <h4 class="text-base font-semibold text-brand-dark tracking-wide">
+        CLUB "TU EVENTO IDEAL"
+      </h4>
+      <p class="text-sm text-brand-secondary font-light mt-1">
+        Turmero, Av. Principal Rosario de Paya, urbanización Privada.
+      </p>
+      <p class="text-xs text-brand-secondary mt-3 leading-relaxed font-light">
+        Nos encantará celebrar con ustedes en este lugar tan especial. La ceremonia, la recepción y la fiesta se realizarán en las mismas instalaciones.
+      </p>
+    </div>
+  </div>
+</div>

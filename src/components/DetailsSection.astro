@@ -1,0 +1,17 @@
+---
+import DressCodeRow from './DressCodeRow.astro';
+import VenueRow from './VenueRow.astro';
+---
+
+<!-- 09. SEXTA SECCIÓN — FILAS EDITORIALES DE INFORMACIÓN (3 COLUMNAS DESIGUALES: 32% / 25% / 43%) -->
+<section class="py-24 sm:py-32 px-6 sm:px-10 lg:px-16 max-w-content mx-auto">
+  <!-- Encabezado sutil de sección -->
+  <div class="mb-16">
+    <span class="text-xs uppercase tracking-[0.3em] text-brand-secondary block mb-2">Detalles esenciales</span>
+    <p class="font-editorial text-3xl sm:text-4xl text-brand-dark">Coordenadas de nuestra boda</p>
+  </div>
+  <div class="space-y-20">
+    <VenueRow />
+    <DressCodeRow />
+  </div>
+</section>

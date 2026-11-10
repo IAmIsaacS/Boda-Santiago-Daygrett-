@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Camilo &amp; Valentina — Invitación de Boda</title>
+<!-- Google Fonts: Cormorant Garamond (Editorial High-Contrast Serif), Inter (Clean Sans), Italianno / Pinyon Script for accents -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Pinyon+Script&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              white: '#FFFFFF',
+              dark: '#242424',
+              secondary: '#666666',
+              accent: '#EFC2D0', // Rosa pastel
+              line: '#E5E5E5'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Inter"', '-apple-system', 'sans-serif'],
+            script: ['"Pinyon Script"', 'cursive']
+          },
+          maxWidth: {
+            'content': '1320px'
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Smooth custom styling */
+    body {
+      background-color: #FFFFFF;
+      color: #242424;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-editorial {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-feature-settings: "liga" 1, "dlig" 1;
+    }
+
+    /* Ora Studio subtle carousel transform */
+    .carousel-item-side {
+      transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    /* Countdown numbers precision */
+    .stat-number {
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body class="bg-white text-brand-dark selection:bg-brand-accent selection:text-brand-dark">
+<!-- 03. ENCABEZADO Y NAVEGACIÓN DISCRETA (ORA STUDIO INSPIRATION) -->
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 sm:px-10 lg:px-16 py-5 flex items-center justify-between mix-blend-difference text-white" id="site-header">
+<!-- Iniciales novios -->
+<a class="text-xs uppercase tracking-[0.25em] font-medium font-sans hover:opacity-75 transition-opacity" href="#hero">
+      C <span class="text-brand-accent">&amp;</span> V
+    </a>
+<!-- Navegación central minimalista -->
+<nav class="hidden md:flex items-center space-x-10 text-[11px] uppercase tracking-[0.25em] font-medium font-sans">
+<a class="hover:text-brand-accent transition-colors" href="#hero">Inicio</a>
+<a class="hover:text-brand-accent transition-colors" href="#vestimenta">Vestimenta</a>
+<a class="hover:text-brand-accent transition-colors" href="#ubicacion">Ubicación</a>
+<a class="hover:text-brand-accent transition-colors" href="#galeria">Momentos</a>
+</nav>
+<!-- Acción discreta de WhatsApp -->
+<div>
+<a class="text-[11px] uppercase tracking-[0.2em] font-medium border-b border-brand-accent pb-0.5 hover:text-brand-accent transition-all" href="https://wa.me/521234567890?text=Hola%20Camilo%20y%20Valentina,%20confirmo%20con%20alegr%C3%ADa%20mi%20asistencia%20a%20su%20boda." rel="noopener noreferrer" target="_blank">
+        Confirmar RSVP
+      </a>
+</div>
+</header>
+<!-- 04. PRIMERA SECCIÓN — PORTADA FOTOGRÁFICA (HERO 100vh) -->
+<section class="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-stone-900" id="hero">
+<!-- Fotografía cinematográfica de pantalla completa -->
+<img alt="Camilo y Valentina" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.88] scale-105 transform animate-pulse duration-[10000ms]" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" style="animation-duration: 12s;"/>
+<!-- Sutil degradado para contraste tipográfico editorial sin alterar tonos naturales -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50 pointer-events-none"></div>
+<!-- Contenido editorial centrado -->
+<div class="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center justify-center">
+<p class="text-xs uppercase tracking-[0.35em] text-white/90 mb-4 font-sans font-light">
+        Nuestra celebración de matrimonio
+      </p>
+<!-- Nombres en serif de gran escala -->
+<h1 class="font-editorial text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-white font-light tracking-tight leading-[0.95] mb-6 drop-shadow-sm">
+        Camilo <span class="font-script text-4xl sm:text-6xl md:text-7xl text-brand-accent align-middle font-normal -mx-1 lowercase">&amp;</span> Valentina
+      </h1>
+<!-- Fecha y lugar -->
+<div class="flex items-center space-x-3 text-xs sm:text-sm uppercase tracking-[0.25em] text-white/90 font-light mt-2">
+<span>Sábado</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+<span>18 Octubre 2025</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+<span>Cartagena</span>
+</div>
+<div class="mt-12 animate-bounce">
+<a aria-label="Desplazar abajo" class="text-white/60 hover:text-white transition-colors" href="#panel-editorial">
+<svg class="w-5 h-5 mx-auto" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"></path>
+</svg>
+</a>
+</div>
+</div>
+</section>
+<!-- 05. SEGUNDA SECCIÓN — PANEL EDITORIAL SUPERPUESTO (ESTILO ORA STUDIO) -->
+<section class="relative z-20 -mt-20 md:-mt-28 px-4 sm:px-6 lg:px-12 max-w-[1360px] mx-auto pb-24" id="panel-editorial">
+<!-- El gran panel blanco superpuesto (86% ancho en desktop, bordes redondeados sutiles) -->
+<div class="bg-white rounded-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08)] border border-stone-100 p-8 sm:p-12 lg:p-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Columna Izquierda (~32% - 4 columnas) -->
+<div class="lg:col-span-4 flex flex-col space-y-6">
+<div class="relative overflow-hidden rounded-xl bg-stone-100 aspect-[3/4] shadow-sm group">
+<img alt="Los novios en la playa" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<div class="pt-2 text-left">
+<span class="text-[10px] uppercase tracking-[0.25em] text-brand-secondary block mb-1">Capítulo I</span>
+<p class="font-editorial text-2xl text-brand-dark leading-snug">
+              Dos caminos que convergen frente al mar.
+            </p>
+<p class="text-xs text-brand-secondary mt-2 font-light leading-relaxed">
+              Fotografía tomada al amanecer en Playa Blanca. Un instante que guardamos en la memoria para siempre.
+            </p>
+</div>
+</div>
+<!-- Columna Derecha (~68% - 8 columnas) -->
+<div class="lg:col-span-8 flex flex-col justify-between h-full space-y-10 lg:pl-6">
+<!-- Mensaje editorial con tipografía serif -->
+<div>
+<span class="text-xs uppercase tracking-[0.3em] text-brand-accent block mb-3 font-medium">Invitación de honor</span>
+<p class="font-editorial text-2xl sm:text-3xl lg:text-4xl text-brand-dark font-light leading-[1.3] tracking-tight">
+              «Con una profunda alegría y el deseo de celebrar el amor que compartimos, los invitamos a acompañarnos en el día más significativo de nuestras vidas. Cada uno de ustedes ha sido parte esencial de nuestra historia.»
+            </p>
+<p class="text-xs uppercase tracking-[0.2em] text-brand-secondary mt-4 font-normal">
+              — Camilo &amp; Valentina
+            </p>
+</div>
+<!-- Fotografía horizontal amplia (16:9) -->
+<div class="relative overflow-hidden rounded-xl bg-stone-100 aspect-[16/9] shadow-sm group">
+<img alt="Camilo y Valentina caminando por la orilla" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<!-- CUENTA REGRESIVA INTEGRADA (Días, Horas, Minutos, Segundos con líneas finas) -->
+<div class="pt-6 border-t border-brand-line">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[11px] uppercase tracking-[0.25em] text-brand-secondary">Tiempo restante para el gran día</span>
+<span class="h-px bg-brand-accent w-16"></span>
+</div>
+<div class="grid grid-cols-4 gap-3 sm:gap-6 text-center" id="countdown-timer">
+<div class="py-3 px-2 sm:px-4 bg-stone-50/70 rounded-lg">
+<span class="stat-number font-editorial text-3xl sm:text-5xl text-brand-dark block font-light" id="days">180</span>
+<span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-brand-secondary font-medium">Días</span>
+</div>
+<div class="py-3 px-2 sm:px-4 bg-stone-50/70 rounded-lg">
+<span class="stat-number font-editorial text-3xl sm:text-5xl text-brand-dark block font-light" id="hours">14</span>
+<span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-brand-secondary font-medium">Horas</span>
+</div>
+<div class="py-3 px-2 sm:px-4 bg-stone-50/70 rounded-lg">
+<span class="stat-number font-editorial text-3xl sm:text-5xl text-brand-dark block font-light" id="minutes">42</span>
+<span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-brand-secondary font-medium">Minutos</span>
+</div>
+<div class="py-3 px-2 sm:px-4 bg-stone-50/70 rounded-lg">
+<span class="stat-number font-editorial text-3xl sm:text-5xl text-brand-dark block font-light" id="seconds">08</span>
+<span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-brand-secondary font-medium">Segundos</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 06. TERCERA SECCIÓN — MENSAJE EDITORIAL (PAUSA VISUAL Y LÍNEA VERTICAL ROSA PASTEL) -->
+<section class="py-24 sm:py-36 px-6 max-w-4xl mx-auto text-center">
+<!-- Línea vertical muy fina en rosa pastel -->
+<div class="w-px h-16 bg-brand-accent mx-auto mb-10"></div>
+<span class="text-[11px] uppercase tracking-[0.3em] text-brand-secondary block mb-5 font-medium">
+      Nuestra promesa
+    </span>
+<!-- Frase principal grande con serif en dos o tres líneas -->
+<h2 class="font-editorial text-4xl sm:text-6xl md:text-7xl font-light text-brand-dark tracking-tight leading-[1.08] mb-8">
+      Un día para celebrar<br/>lo que nos une
+    </h2>
+<p class="text-sm sm:text-base text-brand-secondary max-w-xl mx-auto font-light leading-relaxed">
+      Queremos compartir cada risa, cada brindis y cada baile bajo la brisa del Caribe. Su presencia es el regalo más preciado que podemos recibir en este comienzo.
+    </p>
+<!-- Línea vertical de cierre -->
+<div class="w-px h-16 bg-brand-accent mx-auto mt-10"></div>
+</section>
+<!-- 07. CUARTA SECCIÓN — CARRUSEL FOTOGRÁFICO HORIZONTAL (COMPOSICIÓN EXACTA ORA STUDIO) -->
+<section class="py-16 overflow-hidden bg-white" id="galeria">
+<div class="max-w-[1400px] mx-auto px-4">
+<div class="flex items-center justify-between mb-8 px-4">
+<span class="text-xs uppercase tracking-[0.25em] text-brand-secondary">Colección fotográfica</span>
+<span class="text-[11px] text-brand-secondary tracking-widest font-sans" id="carousel-indicator">01 / 04</span>
+</div>
+<!-- Contenedor del carrusel con imagen central (68%) y laterales asimétricas -->
+<div class="relative w-full flex items-center justify-center min-h-[420px] sm:min-h-[580px] lg:min-h-[640px]">
+<!-- Imagen anterior (lateral izquierda con ligera rotación y transparencia) -->
+<div class="absolute left-0 w-[24%] sm:w-[20%] h-[75%] opacity-40 -translate-x-6 sm:-translate-x-8 -rotate-2 rounded-xl overflow-hidden cursor-pointer transition-all duration-700 hover:opacity-70 shadow-lg" id="slide-prev">
+<img alt="Playa recuerdo" class="w-full h-full object-cover" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<!-- Imagen central grande (68% - 70% de ancho) -->
+<div class="relative z-10 w-[88%] sm:w-[70%] lg:w-[66%] h-[380px] sm:h-[540px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl transition-all duration-700" id="slide-main">
+<img alt="Camilo y Valentina en el atardecer" class="w-full h-full object-cover object-center transition-all duration-700" id="main-image" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute bottom-4 left-6 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[11px] uppercase tracking-[0.2em] text-brand-dark">
+            Atardecer en Bocagrande
+          </div>
+</div>
+<!-- Imagen siguiente (lateral derecha con ligera rotación) -->
+<div class="absolute right-0 w-[24%] sm:w-[20%] h-[75%] opacity-40 translate-x-6 sm:translate-x-8 rotate-2 rounded-xl overflow-hidden cursor-pointer transition-all duration-700 hover:opacity-70 shadow-lg" id="slide-next">
+<img alt="Detalles de amor" class="w-full h-full object-cover" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+</div>
+<!-- Controles de navegación muy pequeños debajo de la imagen principal -->
+<div class="flex items-center justify-center space-x-6 mt-8">
+<button aria-label="Foto anterior" class="w-10 h-10 rounded-full border border-brand-line flex items-center justify-center text-brand-dark hover:border-brand-accent hover:text-brand-accent transition-colors" id="btn-prev">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</button>
+<div class="flex space-x-2" id="carousel-dots">
+<span class="w-6 h-1 bg-brand-accent rounded-full"></span>
+<span class="w-2 h-1 bg-brand-line rounded-full"></span>
+<span class="w-2 h-1 bg-brand-line rounded-full"></span>
+<span class="w-2 h-1 bg-brand-line rounded-full"></span>
+</div>
+<button aria-label="Foto siguiente" class="w-10 h-10 rounded-full border border-brand-line flex items-center justify-center text-brand-dark hover:border-brand-accent hover:text-brand-accent transition-colors" id="btn-next">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</button>
+</div>
+</div>
+</section>
+<!-- 08. QUINTA SECCIÓN — TITULAR TIPOGRÁFICO GIGANTE (PRESENCIA EDITORIAL ORA STUDIO) -->
+<section class="py-24 sm:py-36 px-4 sm:px-8 max-w-content mx-auto border-t border-b border-brand-line">
+<div class="w-full text-center">
+<h2 class="font-editorial text-6xl sm:text-8xl md:text-9xl lg:text-[140px] xl:text-[160px] font-light text-brand-dark tracking-tight leading-[0.88] select-none">
+        Un día para<br/>
+<span class="italic font-normal">recordar</span>
+</h2>
+</div>
+</section>
+<!-- 09. SEXTA SECCIÓN — FILAS EDITORIALES DE INFORMACIÓN (3 COLUMNAS DESIGUALES: 32% / 25% / 43%) -->
+<section class="py-24 sm:py-32 px-6 sm:px-10 lg:px-16 max-w-content mx-auto">
+<!-- Encabezado sutil de sección -->
+<div class="mb-16">
+<span class="text-xs uppercase tracking-[0.3em] text-brand-secondary block mb-2">Detalles esenciales</span>
+<p class="font-editorial text-3xl sm:text-4xl text-brand-dark">Coordenadas de nuestra boda</p>
+</div>
+<div class="space-y-20">
+<!-- FILA 1 — CÓDIGO DE VESTIMENTA (32% Foto | 25% Título | 43% Texto) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-10 border-t border-brand-line" id="vestimenta">
+<!-- Columna Izquierda — 32% (4 cols en grid-12) -->
+<div class="lg:col-span-4">
+<div class="aspect-[4/5] rounded-xl overflow-hidden bg-stone-100 shadow-sm">
+<img alt="Código de vestimenta elegante playero" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+</div>
+<!-- Columna Central — 25% (3 cols en grid-12) -->
+<div class="lg:col-span-3 lg:pt-2">
+<span class="text-[10px] uppercase tracking-[0.25em] text-brand-secondary block mb-2">Protocolo</span>
+<h3 class="font-editorial text-3xl sm:text-4xl text-brand-dark leading-tight">
+            Código de<br class="hidden sm:inline"/>vestimenta
+          </h3>
+<span class="inline-block mt-3 px-3 py-1 bg-brand-accent/20 text-brand-dark text-xs font-medium rounded-full uppercase tracking-wider">
+            Formal Guayabera &amp; Cóctel
+          </span>
+</div>
+<!-- Columna Derecha — 43% (5 cols en grid-12) -->
+<div class="lg:col-span-5 lg:pt-2 flex flex-col justify-between space-y-4">
+<p class="text-sm sm:text-base text-brand-secondary font-light leading-relaxed">
+            Deseamos que todos disfruten cómodos pero con la elegancia que amerita este momento frente al mar.
+          </p>
+<div class="space-y-3 pt-2">
+<div class="border-l-2 border-brand-accent pl-4">
+<span class="text-xs uppercase tracking-wider text-brand-dark font-medium block">Caballeros</span>
+<p class="text-xs text-brand-secondary font-light mt-0.5">Guayabera de lino en tonos claros (blanco, crudo o arena) y pantalón formal fresco.</p>
+</div>
+<div class="border-l-2 border-brand-accent pl-4">
+<span class="text-xs uppercase tracking-wider text-brand-dark font-medium block">Damas</span>
+<p class="text-xs text-brand-secondary font-light mt-0.5">Vestido largo o midi en tejidos fluidos y colores alegres o pasteles. Calzado apto para jardín costero.</p>
+</div>
+</div>
+<p class="text-xs text-brand-secondary/80 italic pt-2">
+            * Se reserva el color blanco y marfil exclusivamente para la novia.
+          </p>
+</div>
+</div>
+<!-- FILA 2 — UBICACIÓN (32% Foto | 25% Título | 43% Texto) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-10 border-t border-brand-line" id="ubicacion">
+<!-- Columna Izquierda — 32% (4 cols en grid-12) -->
+<div class="lg:col-span-4">
+<div class="aspect-[16/9] lg:aspect-[4/3] rounded-xl overflow-hidden bg-stone-100 shadow-sm">
+<img alt="Casa de Playa del Mar" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+</div>
+<!-- Columna Central — 25% (3 cols en grid-12) -->
+<div class="lg:col-span-3 lg:pt-2">
+<span class="text-[10px] uppercase tracking-[0.25em] text-brand-secondary block mb-2">Recepción &amp; Fiesta</span>
+<h3 class="font-editorial text-3xl sm:text-4xl text-brand-dark leading-tight">
+            El lugar de nuestra<br class="hidden sm:inline"/>celebración
+          </h3>
+<span class="text-xs text-brand-secondary uppercase tracking-[0.2em] block mt-3 font-medium">
+            Ceremonia 4:30 PM
+          </span>
+</div>
+<!-- Columna Derecha — 43% (5 cols en grid-12) -->
+<div class="lg:col-span-5 lg:pt-2 flex flex-col justify-between space-y-4">
+<div>
+<h4 class="text-base font-semibold text-brand-dark tracking-wide">
+              Hotel &amp; Jardín Casa del Mar
+            </h4>
+<p class="text-sm text-brand-secondary font-light mt-1">
+              Km 12 Vía Manzanillo del Mar, Zona Norte, Cartagena de Indias, Colombia.
+            </p>
+<p class="text-xs text-brand-secondary mt-3 leading-relaxed font-light">
+              Tanto la ceremonia nupcial como la recepción y la fiesta se llevarán a cabo en las mismas instalaciones con vista panorámica al mar.
+            </p>
+</div>
+<div class="pt-4">
+<a class="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] text-brand-dark font-medium border-b border-brand-accent pb-1 hover:text-brand-accent transition-colors" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span>Abrir en Google Maps</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<!-- MAPA EN COMPOSICIÓN INDEPENDIENTE (ANCHO CONSIDERABLE) -->
+<div class="w-full pt-4">
+<div class="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-brand-line shadow-sm relative group bg-stone-100">
+<iframe allowfullscreen="" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125586.2307223295!2d-75.56843468536132!3d10.428389793139366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef625e7ae43905f%3A0x6b4fb096e85507ff!2sCartagena%20de%20Indias%2C%20Bol%C3%ADvar!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" style="border:0; filter: grayscale(90%) contrast(1.1);" title="Mapa del lugar de la celebración" width="100%">
+</iframe>
+<div class="absolute bottom-4 left-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm text-xs font-sans">
+<span class="font-medium text-brand-dark">Cartagena de Indias</span> · Servicio de transporte sugerido disponible
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. SÉPTIMA SECCIÓN — PANEL DE CONFIRMACIÓN (AMPLIO, SIN FORMULARIOS, EXCLUSIVAMENTE WHATSAPP) -->
+<section class="py-20 px-6 sm:px-12 max-w-5xl mx-auto">
+<div class="bg-white rounded-2xl border border-brand-line shadow-[0_20px_50px_-10px_rgba(0,0,0,0.04)] p-10 sm:p-16 lg:p-24 text-center">
+<span class="text-xs uppercase tracking-[0.3em] text-brand-accent font-medium block mb-4">
+        Asistencia
+      </span>
+<h3 class="font-editorial text-4xl sm:text-5xl lg:text-6xl text-brand-dark font-light tracking-tight mb-6">
+        ¿Nos acompañas a celebrar?
+      </h3>
+<p class="text-sm sm:text-base text-brand-secondary font-light max-w-md mx-auto leading-relaxed mb-4">
+        Tu presencia es fundamental para nosotros. Por favor confirma tu acompañamiento antes del <strong>15 de Septiembre de 2025</strong>.
+      </p>
+<div class="text-xs uppercase tracking-[0.2em] text-brand-dark/70 mb-10 font-sans">
+        Camilo &amp; Valentina · 18.10.2025
+      </div>
+<!-- ÚNICO BOTÓN DE WHATSAPP REFINADO Y ELEGANTE CON TOQUE ROSA PASTEL -->
+<div>
+<a class="inline-flex items-center space-x-3 px-8 py-3.5 rounded-full bg-brand-accent text-brand-dark text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#e7b2c2] hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5" href="https://wa.me/521234567890?text=Hola%20Camilo%20y%20Valentina!%20Confirmo%20con%20mucha%20alegr%C3%ADa%20mi%20asistencia%20a%20su%20boda%20el%2018%20de%20Octubre." rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg>
+<span>Confirmar asistencia</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 11. OCTAVA SECCIÓN — CIERRE FOTOGRÁFICO DE GRAN FORMATO (ESTILO ORA STUDIO) -->
+<footer class="relative w-full h-[70vh] min-h-[500px] overflow-hidden flex items-end justify-center pb-16 bg-stone-900">
+<!-- Fotografía de cierre panorámica de alta fidelidad -->
+<img alt="Camilo y Valentina al atardecer frente al mar" class="absolute inset-0 w-full h-full object-cover object-bottom filter brightness-[0.82]" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="relative z-10 text-center px-6 text-white max-w-xl mx-auto">
+<div class="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light mb-3">
+        Camilo <span class="font-script text-3xl sm:text-4xl text-brand-accent lowercase">&amp;</span> Valentina
+      </div>
+<p class="text-xs uppercase tracking-[0.3em] text-white/80 font-light mb-6">
+        18 de Octubre de 2025 · Cartagena de Indias
+      </p>
+<div class="w-8 h-px bg-brand-accent mx-auto mb-6"></div>
+<p class="text-[10px] uppercase tracking-[0.25em] text-white/50 font-sans">
+        Hecho con amor para nuestra familia y amigos
+      </p>
+</div>
+</footer>
+<!-- SCRIPT LIGERO PARA CONTADOR Y NAVEGACIÓN SUAVE DE CARRUSEL -->
+<script>
+    // Header scroll background effect
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.remove('mix-blend-difference', 'text-white');
+        header.classList.add('bg-white/95', 'backdrop-blur-md', 'text-brand-dark', 'shadow-sm', 'py-4');
+      } else {
+        header.classList.add('mix-blend-difference', 'text-white');
+        header.classList.remove('bg-white/95', 'backdrop-blur-md', 'text-brand-dark', 'shadow-sm', 'py-4');
+      }
+    });
+
+    // Countdown Timer logic
+    const weddingDate = new Date('2025-10-18T16:30:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance > 0) {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('days').innerText = String(days).padStart(2, '0');
+        document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+        document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Carousel functionality
+    const galleryItems = [
+      {
+        main: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1800&q=85",
+        caption: "Atardecer en Bocagrande",
+        prev: "https://images.unsplash.com/photo-1544077960-604201fe74bc?auto=format&fit=crop&w=1000&q=80",
+        next: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        main: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1800&q=85",
+        caption: "Caminata bajo la brisa",
+        prev: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1000&q=80",
+        next: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        main: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1800&q=85",
+        caption: "Nuestra complicidad en la arena",
+        prev: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1000&q=80",
+        next: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        main: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1800&q=85",
+        caption: "El primer instante de un sí eterno",
+        prev: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1000&q=80",
+        next: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1000&q=80"
+      }
+    ];
+
+    let currentIndex = 0;
+    const mainImg = document.getElementById('main-image');
+    const indicator = document.getElementById('carousel-indicator');
+    const prevSlideEl = document.querySelector('#slide-prev img');
+    const nextSlideEl = document.querySelector('#slide-next img');
+
+    function renderSlide(index) {
+      const item = galleryItems[index];
+      mainImg.src = item.main;
+      prevSlideEl.src = item.prev;
+      nextSlideEl.src = item.next;
+      indicator.innerText = `0${index + 1} / 0${galleryItems.length}`;
+      
+      const dots = document.querySelectorAll('#carousel-dots span');
+      dots.forEach((dot, idx) => {
+        if(idx === index) {
+          dot.className = "w-6 h-1 bg-brand-accent rounded-full transition-all";
+        } else {
+          dot.className = "w-2 h-1 bg-brand-line rounded-full transition-all";
+        }
+      });
+    }
+
+    document.getElementById('btn-next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      renderSlide(currentIndex);
+    });
+
+    document.getElementById('btn-prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      renderSlide(currentIndex);
+    });
+
+    document.getElementById('slide-next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      renderSlide(currentIndex);
+    });
+
+    document.getElementById('slide-prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      renderSlide(currentIndex);
+    });
+  </script>
+</body>
+</html>

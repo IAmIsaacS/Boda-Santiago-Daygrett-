@@ -1,0 +1,52 @@
+<div class="pt-6 border-t border-brand-line">
+  <div class="flex items-center mb-4">
+    <span class="text-[11px] uppercase tracking-[0.25em] text-brand-secondary">Tiempo restante para el gran día</span>
+  </div>
+  <div class="grid grid-cols-4 gap-3 sm:gap-6 text-center" id="countdown-timer">
+    <div class="py-3 px-2 sm:px-4 bg-stone-50/70 rounded-lg">
+      <span class="stat-number font-sans text-3xl sm:text-5xl text-brand-dark block font-light" id="days">180</span>
+      <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-brand-secondary font-medium">Días</span>
+    </div>
+    <div class="py-3 px-2 sm:px-4 bg-stone-50/70 rounded-lg">
+      <span class="stat-number font-sans text-3xl sm:text-5xl text-brand-dark block font-light" id="hours">14</span>
+      <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-brand-secondary font-medium">Horas</span>
+    </div>
+    <div class="py-3 px-2 sm:px-4 bg-stone-50/70 rounded-lg">
+      <span class="stat-number font-sans text-3xl sm:text-5xl text-brand-dark block font-light" id="minutes">42</span>
+      <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-brand-secondary font-medium">Minutos</span>
+    </div>
+    <div class="py-3 px-2 sm:px-4 bg-stone-50/70 rounded-lg">
+      <span class="stat-number font-sans text-3xl sm:text-5xl text-brand-dark block font-light" id="seconds">08</span>
+      <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-brand-secondary font-medium">Segundos</span>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  // Countdown Timer logic
+  const weddingDate = new Date('2026-12-12T13:30:00-05:00').getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance > 0) {
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerText = String(days).padStart(2, '0');
+      document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+      document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+    } else {
+      document.getElementById('days').innerText = '00';
+      document.getElementById('hours').innerText = '00';
+      document.getElementById('minutes').innerText = '00';
+      document.getElementById('seconds').innerText = '00';
+    }
+  }
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>

@@ -1,0 +1,22 @@
+---
+import footerImage from '../assets/footer.jpeg';
+---
+
+<!-- 11. OCTAVA SECCIÓN — CIERRE FOTOGRÁFICO DE GRAN FORMATO (ESTILO ORA STUDIO) -->
+<footer class="relative w-full h-[70vh] min-h-[500px] lg:h-auto lg:min-h-0 lg:pt-16 overflow-hidden flex items-end justify-center pb-16 bg-stone-900">
+  <!-- Fotografía de cierre panorámica de alta fidelidad -->
+  <img alt="Santiago y Daygrett" class="absolute inset-0 w-full h-full object-cover object-bottom filter brightness-[0.82] lg:hidden" src={footerImage.src} style="object-position: 50% 20%;" />
+  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent lg:hidden"></div>
+  <div class="relative z-10 text-center px-6 text-white max-w-xl mx-auto">
+    <div class="font-hero text-5xl sm:text-6xl lg:text-7xl font-light mb-3">
+      Santiago <span class="font-sans text-3xl sm:text-4xl lg:text-5xl text-brand-accent lowercase mx-2 sm:mx-3">&amp;</span> Daygrett
+    </div>
+    <p class="text-xs uppercase tracking-[0.3em] text-white/80 font-light mb-6">
+      12 de Diciembre de 2026 · Turmero
+    </p>
+    <div class="w-8 h-px bg-brand-accent mx-auto mb-6"></div>
+    <p class="text-[10px] uppercase tracking-[0.25em] text-white/50 font-sans">
+      Hecho con amor para nuestra familia y amigos
+    </p>
+  </div>
+</footer>
